@@ -1,10 +1,13 @@
-
+import BackgroundHeading from "./components/background-heading";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <div >
-     todo list
-    </div>
+    <>
+    <BackgroundHeading/>
+      <main></main>
+      <Footer/>
+    </>
   );
 }
 
