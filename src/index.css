@@ -19,6 +19,7 @@ ul {
 
 input {
   font: inherit;
+  outline: 1px solid #2BEEFF;
 }
 
 button {
@@ -294,7 +295,7 @@ h1 {
 
 @media (max-height: 850px) {
   h1 {
-    top: 0%;
+    top: 0;
   }
 }
 
@@ -312,4 +313,9 @@ footer {
   font-size: 12px;
   opacity: 0.5;
   margin-top: 12px;
+}
+
+.input-error{
+  border-color: red;
+  outline: none;
 }
