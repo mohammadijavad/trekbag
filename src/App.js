@@ -9,7 +9,7 @@ import {initialItems} from "./lib/constants";
 function App() {
   const [items,setItems]=useState(initialItems)
 
-  function addNewItem(itemName){
+  function handleAddNewItem(itemName){
     const newItem = {
       id: new Date().getTime(),
       name: itemName,
@@ -23,7 +23,7 @@ function App() {
       <main>
         <Header/>
         <ItemList items={items}  />
-        <SideBar addNewItem={addNewItem} />
+        <SideBar handleAddNewItem={handleAddNewItem} />
       </main>
       <Footer/>
     </>
