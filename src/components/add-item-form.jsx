@@ -1,7 +1,7 @@
 import Button from "./button";
 import {useState} from "react";
 
-export default function AddItemForm({setItems}) {
+export default function AddItemForm({addNewItem}) {
     const [inputValue,setValue]=useState('')
     const [error, setError] = useState('')
     const hasError=error&&!inputValue.trim()
@@ -12,12 +12,7 @@ export default function AddItemForm({setItems}) {
             setError('input is required')
             return
         }
-        const newItem = {
-            id: new Date().getTime(),
-            name: inputValue,
-            packed: false
-        }
-        setItems((prev)=>[...prev,newItem])
+        addNewItem(inputValue)
         setValue('')
     }
 

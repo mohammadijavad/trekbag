@@ -9,13 +9,21 @@ import {initialItems} from "./lib/constants";
 function App() {
   const [items,setItems]=useState(initialItems)
 
+  function addNewItem(itemName){
+    const newItem = {
+      id: new Date().getTime(),
+      name: itemName,
+      packed: false
+    }
+    setItems([...items,newItem])
+  }
   return (
     <>
     <BackgroundHeading/>
       <main>
         <Header/>
         <ItemList items={items}  />
-        <SideBar setItems={setItems} />
+        <SideBar addNewItem={addNewItem} />
       </main>
       <Footer/>
     </>
