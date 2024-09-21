@@ -50,7 +50,6 @@ function App() {
     setItems(itemsCompleted);
   }
 
-  console.log(items);
   return (
     <>
       <BackgroundHeading />

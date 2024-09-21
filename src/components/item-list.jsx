@@ -1,19 +1,23 @@
+import EmptyView from "./empty-view";
+
 export default function ItemList({
   items,
   handleDeleteItem,
   handleToggleItem,
 }) {
   return (
-    <div className="item-list">
-      {items.map((item) => (
-        <Item
-          key={item.id}
-          {...item}
-          handleDeleteItem={handleDeleteItem}
-          handleToggleItem={handleToggleItem}
-        />
-      ))}
-    </div>
+    <ul className="item-list">
+      {items.length === 0 ? <EmptyView /> : null}
+      {items.length &&
+        items.map((item) => (
+          <Item
+            key={item.id}
+            {...item}
+            handleDeleteItem={handleDeleteItem}
+            handleToggleItem={handleToggleItem}
+          />
+        ))}
+    </ul>
   );
 }
 
