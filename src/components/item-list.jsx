@@ -8,7 +8,7 @@ export default function ItemList({
   return (
     <ul className="item-list">
       {items.length === 0 ? <EmptyView /> : null}
-      {items.length &&
+      {items.length > 0 &&
         items.map((item) => (
           <Item
             key={item.id}
