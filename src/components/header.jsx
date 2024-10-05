@@ -1,9 +1,8 @@
 import Logo from "./logo";
 import CountItem from "./count-item";
-import { useContext } from "react";
-import { itemsContext } from "../context/items-context-provider";
+import useItemContext from "../hooks/useItemContext";
 export default function Header() {
-  const { items } = useContext(itemsContext);
+  const { items } = useItemContext();
   return (
     <header>
       <Logo />
