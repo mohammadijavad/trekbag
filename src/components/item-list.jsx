@@ -16,11 +16,7 @@ const sortingOptions = [
     value: "unpacked",
   },
 ];
-export default function ItemList({
-  items,
-  handleDeleteItem,
-  handleToggleItem,
-}) {
+export default function ItemList() {
   const [sortBy, setSortBy] = useState("default");
 
   const sortedItems = useMemo(

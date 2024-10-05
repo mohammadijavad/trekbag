@@ -1,11 +1,6 @@
 import Button from "./button";
 
-export default function ButtonGroup({
-  handleRemoveAllItems,
-  handleResetToInitial,
-  handleMarkAllAsComplete,
-  handleMarkASIncomplete,
-}) {
+export default function ButtonGroup() {
   const secondaryButtons = [
     {
       text: "Mark all as complete",

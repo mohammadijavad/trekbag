@@ -1,12 +1,11 @@
 import Logo from "./logo";
 import CountItem from "./count-item";
-export default function Header({ totalItems, totalPackedItems }) {
+export default function Header() {
   return (
     <header>
       <Logo />
-      {totalItems > 0 && (
-        <CountItem totalItem={totalItems} totalPackedItems={totalPackedItems} />
-      )}
+
+      <CountItem />
     </header>
   );
 }
