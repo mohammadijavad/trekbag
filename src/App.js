@@ -3,15 +3,18 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import SideBar from "./components/side-bar";
 import ItemList from "./components/item-list";
+import ItemsContextProvider from "./context/items-context-provider";
 
 function App() {
   return (
     <>
       <BackgroundHeading />
       <main>
-        <Header />
-        <ItemList />
-        <SideBar />
+        <ItemsContextProvider>
+          <Header />
+          <ItemList />
+          <SideBar />
+        </ItemsContextProvider>
       </main>
       <Footer />
       <div></div>

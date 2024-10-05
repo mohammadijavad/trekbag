@@ -1,7 +1,8 @@
 import Button from "./button";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { itemsContext } from "../context/items-context-provider";
 
-export default function AddItemForm() {
+export default function AddItemForm({ onAddItem }) {
   const [inputValue, setValue] = useState("");
   const [error, setError] = useState("");
   const hasError = error && !inputValue.trim();

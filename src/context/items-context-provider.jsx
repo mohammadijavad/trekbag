@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export default function ItemsContextProvider() {
+export const itemsContext = createContext();
+export default function ItemsContextProvider({ children }) {
   const getItemsFromLocalStorage = JSON.parse(localStorage.getItem("items"));
   const [items, setItems] = useState(getItemsFromLocalStorage);
 
@@ -32,7 +33,7 @@ export default function ItemsContextProvider() {
   }
 
   function handleResetToInitial() {
-    setItems(initialItems);
+    setItems([]);
   }
 
   function handleMarkAllAsComplete() {
@@ -48,5 +49,21 @@ export default function ItemsContextProvider() {
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
-  return <div></div>;
+
+  return (
+    <itemsContext.Provider
+      value={{
+        items,
+        handleDeleteItem,
+        handleToggleItem,
+        handleAddNewItem,
+        handleMarkASIncomplete,
+        handleMarkAllAsComplete,
+        handleResetToInitial,
+        handleRemoveAllItems,
+      }}
+    >
+      {children}
+    </itemsContext.Provider>
+  );
 }
