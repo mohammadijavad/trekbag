@@ -1,9 +1,9 @@
 import AddItemForm from "./add-item-form";
 import ButtonGroup from "./button-group";
-import useItemContext from "../hooks/useItemContext";
+import { useTreksStore } from "../store/trek-store";
 
 export default function SideBar() {
-  const { handleAddNewItem } = useItemContext();
+  const { handleAddNewItem } = useTreksStore();
   return (
     <div className="sidebar">
       <AddItemForm onAddItem={handleAddNewItem} />

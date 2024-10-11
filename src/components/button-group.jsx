@@ -1,13 +1,13 @@
 import Button from "./button";
-import useItemContext from "../hooks/useItemContext";
+import { useTreksStore } from "../store/trek-store";
 
 export default function ButtonGroup() {
   const {
     handleMarkAllAsComplete,
-    handleMarkASIncomplete,
     handleResetToInitial,
+    handleMarkASIncomplete,
     handleRemoveAllItems,
-  } = useItemContext();
+  } = useTreksStore();
   const secondaryButtons = [
     {
       text: "Mark all as complete",

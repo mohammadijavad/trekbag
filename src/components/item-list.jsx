@@ -1,7 +1,7 @@
 import EmptyView from "./empty-view";
 import { useMemo, useState } from "react";
 import Select from "react-select";
-import useItemContext from "../hooks/useItemContext";
+import { useTreksStore } from "../store/trek-store";
 
 const sortingOptions = [
   {
@@ -18,7 +18,7 @@ const sortingOptions = [
   },
 ];
 export default function ItemList() {
-  const { items, handleDeleteItem, handleToggleItem } = useItemContext();
+  const { items, handleDeleteItem, handleToggleItem } = useTreksStore();
   const [sortBy, setSortBy] = useState("default");
 
   const sortedItems = useMemo(

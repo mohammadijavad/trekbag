@@ -1,8 +1,9 @@
 import Logo from "./logo";
 import CountItem from "./count-item";
-import useItemContext from "../hooks/useItemContext";
+import { useTreksStore } from "../store/trek-store";
+
 export default function Header() {
-  const { items } = useItemContext();
+  const { items } = useTreksStore();
   return (
     <header>
       <Logo />
